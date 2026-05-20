@@ -1,0 +1,23 @@
+# Dependências e artefatos — ignorados pelo Git
+
+# Node
+node_modules/
+
+# Build outputs
+dist/
+build/
+.cache/
+
+# Ambiente
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
