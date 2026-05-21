@@ -88,32 +88,37 @@ export default function Navigation() {
           Solicitar Orçamento
         </a>
 
-        {/* Mobile toggle */}
+        {/* Mobile toggle — mínimo 44×44px para toque confortável */}
         <button
           onClick={() => setOpen(!open)}
-          className={`md:hidden p-2 ${scrolled ? 'text-brand-blue-dark' : 'text-white'}`}
+          className={`md:hidden flex items-center justify-center w-11 h-11 rounded-lg transition-colors ${
+            scrolled
+              ? 'text-brand-blue-dark hover:bg-gray-100'
+              : 'text-white hover:bg-white/10'
+          }`}
           aria-label={open ? 'Fechar menu' : 'Abrir menu'}
         >
-          {open ? <X size={22} /> : <Menu size={22} />}
+          {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — usa opacity+y em vez de height para não bloquear cliques */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.18, ease: 'easeOut' }}
             className="md:hidden bg-white border-t border-gray-100 shadow-lg"
           >
-            <div className="px-6 py-5 flex flex-col gap-1">
+            <div className="px-5 py-4 flex flex-col">
               {links.map((l) => (
                 <a
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="text-gray-700 hover:text-brand-blue py-3 border-b border-gray-100 text-sm font-medium transition-colors"
+                  className="text-gray-700 hover:text-brand-orange py-4 border-b border-gray-100 text-base font-semibold transition-colors flex items-center gap-2"
                 >
                   {l.label}
                 </a>
@@ -122,10 +127,11 @@ export default function Navigation() {
                 href={`https://wa.me/${COMPANY.whatsapp}?text=Olá! Gostaria de solicitar um orçamento.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 flex items-center justify-center gap-2 bg-brand-orange text-white font-bold py-3 rounded-xl text-sm"
+                onClick={() => setOpen(false)}
+                className="mt-4 flex items-center justify-center gap-2 bg-brand-orange text-white font-bold py-4 rounded-xl text-base"
               >
-                <MessageCircle size={15} />
-                Solicitar Orçamento
+                <MessageCircle size={18} />
+                Solicitar Orçamento via WhatsApp
               </a>
             </div>
           </motion.div>

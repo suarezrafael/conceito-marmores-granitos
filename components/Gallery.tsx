@@ -61,7 +61,7 @@ const projects = [
     title: 'Banheiro Master',
     subtitle: 'Revestimento completo em mármore',
     category: 'Banheiros' as Category,
-    image: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80',
     real: false,
   },
   {
@@ -69,7 +69,7 @@ const projects = [
     title: 'Parede em Pedra Natural',
     subtitle: 'Revestimento para área externa',
     category: 'Revestimentos' as Category,
-    image: 'https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80',
     real: false,
   },
 ]
@@ -134,6 +134,11 @@ export default function Gallery() {
                   src={p.image}
                   alt={p.title}
                   loading="lazy"
+                  onError={(e) => {
+                    const el = e.currentTarget
+                    el.style.display = 'none'
+                    el.parentElement!.style.background = '#eef2fb'
+                  }}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
                 />
 

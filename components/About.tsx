@@ -16,7 +16,7 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="sobre" className="py-24 md:py-32 bg-white">
+    <section id="sobre" className="py-24 md:py-32 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div ref={ref} className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Image */}
