@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\rafae\\\\source\\\\repos\\\\suarezrafael\\\\conceito-marmores-granitos\" -Force)",
+      "Bash(Select-Object Name, Mode)",
+      "Bash(git ls-tree *)",
+      "Bash(git config *)",
+      "Bash(npm install *)",
+      "PowerShell(Start-Process -FilePath \"cmd.exe\" -ArgumentList \"/c cd `\"C:\\\\Users\\\\rafae\\\\source\\\\repos\\\\suarezrafael\\\\conceito-marmores-granitos`\" && npm run dev\" -WindowStyle Normal)",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3000\" -TimeoutSec 5 -UseBasicParsing; \"HTTP $\\($r.StatusCode\\)\" } catch { $_.Exception.Message })",
+      "PowerShell(Get-Process *)",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3002\" -TimeoutSec 10 -UseBasicParsing; \"HTTP $\\($r.StatusCode\\)\" } catch { $_.Exception.Message })",
+      "PowerShell(Start-Process \"http://localhost:3002\")",
+      "WebFetch(domain:www.instagram.com)",
+      "WebSearch",
+      "WebFetch(domain:www.picuki.com)",
+      "WebFetch(domain:imginn.com)",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3002\" -TimeoutSec 8 -UseBasicParsing; \"OK - HTTP $\\($r.StatusCode\\)\" } catch { \"ERRO: $\\($_.Exception.Message\\)\" })",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3002\" -TimeoutSec 5 -UseBasicParsing; \"OK $\\($r.StatusCode\\)\" } catch { \"ERRO: $\\($_.Exception.Message\\)\" })",
+      "Bash(git add *)"
+    ]
+  }
+}

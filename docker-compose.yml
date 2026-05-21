@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    container_name: conceito-marmores
+    ports:
+      - "8002:8002"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - PORT=8002
+      - HOSTNAME=0.0.0.0
